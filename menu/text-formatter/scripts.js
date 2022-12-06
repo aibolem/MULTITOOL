@@ -40,3 +40,11 @@ document.getElementById("sentence").addEventListener("click", function(){
 document.getElementById("title").addEventListener("click", function(){
     textarea.value = TitleCase(textarea.value);
 });
+
+document.getElementById("base64_encode").addEventListener("click", function(){
+    textarea.value = btoa(textarea.value);
+});
+  
+document.getElementById("base64_decode").addEventListener("click", function(){
+    textarea.value = atob(textarea.value);
+});

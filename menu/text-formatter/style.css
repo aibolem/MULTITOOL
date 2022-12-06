@@ -7,5 +7,5 @@ textarea{background-color: hwb(45 24% 75% / 0.179); width: 100%; font-size: 1em;
 .header a.logo {font-size: 25px;font-family: sans-serif;    font-weight: bold; }
 .header a:hover {background-color: #ddd;color: black;}
 .header-right {float: right;}
-.case-convertor { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap;}
+.text-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap;}
 .option {display:flex; justify-content: space-between; height: 40px;}
