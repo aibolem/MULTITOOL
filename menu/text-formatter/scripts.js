@@ -1,3 +1,5 @@
+"use strict";
+
 const TitleCase = (string) => {
     var result = [];
     var a = string.toLowerCase().split(" ");
