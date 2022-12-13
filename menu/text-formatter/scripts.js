@@ -25,6 +25,12 @@ const SentenceCase = (string) => {
     }
     return words.join(" ");
 };
+
+const Trim = (string) => {
+    var newString = string.replace(/\s+/g,' ').trim();
+    return newString
+};
+
 var textarea = document.getElementById("text");
 
 document.getElementById("lower").addEventListener("click", function(){
@@ -49,4 +55,9 @@ document.getElementById("base64_encode").addEventListener("click", function(){
   
 document.getElementById("base64_decode").addEventListener("click", function(){
     textarea.value = atob(textarea.value);
+});
+
+document.getElementById("trim").addEventListener("click", function(){
+    textarea.value = Trim(textarea.value);
+    console.log(textarea.value)
 });
