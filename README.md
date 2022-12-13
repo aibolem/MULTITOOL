@@ -4,3 +4,4 @@
 2. JSON Validator
 3. Case convertor
 4. Json Beautifier
+5. Trim String
