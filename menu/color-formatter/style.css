@@ -1,2 +1,11 @@
-.color-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap;}
-.option {display:flex; flex-wrap: wrap; justify-content: space-between; height: 40px;}
+.color-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap; }
+.option { display:flex; flex-wrap: wrap; justify-content: space-between; height: 40px; }
+.container { width: 200px; height: 100px; border-color: hsl(152, 100%, 50%); }
+.colorBox { padding: 5px; }
+.color { width: 100%; height: 100px; border-radius: 15px 15px 15px 15px; border: 2px solid #000000;}
+.colorValues { padding: 5px;}
+.rgb, .hex { width: 100%; height: 25px; border-radius: 35px 35px 35px 35px; position: relative; top: 5px;}
+.slider {width: 100%; height: 2px; outline: none; padding: 0; margin: 0; -webkit-appearance: none; border-radius: 5px; cursor: pointer; background-image: linear-gradient(#000000, #000000, #000000, #000000);}
+.sliderR .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border: 4px solid red; border-radius: 50%; background: #fff; cursor: pointer; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }
+.sliderG .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border: 4px solid green; border-radius: 50%; background: #fff; cursor: pointer; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }
+.sliderB .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border: 4px solid blue; border-radius: 50%; background: #fff; cursor: pointer; -webkit-transition: all 0.15s ease-in-out; transition: all 0.15s ease-in-out; }

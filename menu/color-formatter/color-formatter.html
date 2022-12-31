@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Json Formatter</title>
+    <title>Color Formatter</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPVZ3Y14KT"></script>
     <script>
@@ -27,7 +27,25 @@
     <section>
         <div class="color-formatter">
             <div class="option">
-                <input type="color" value="#1DB8CE" id="colorPicker">
+                <div class="container">
+                    <div class="colorBox"><div class="color" id="color"></div></div>
+                    <div class="colorValues">
+                        <textarea class="hex" id="hex" readonly ></textarea>
+                        <textarea class="rgb" id="rgb" readonly></textarea>
+                    </div>
+                    <div class="colorSlider">
+                        <div class="sliderR">
+                            R <input class="slider" id="red" type="range" min="0" max="255" value="255" >
+                            <output id="output"></output>
+                        </div>
+                        <div class="sliderG">
+                            G <input class="slider" id="green" type="range" min="0" max="255" value="255">
+                        </div>
+                        <div class="sliderB">
+                            B <input class="slider" id="blue" type="range" min="0" max="255" value="255">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
