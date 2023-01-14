@@ -1,6 +1,6 @@
 .color-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap; }
-.option { display:flex; flex-wrap: wrap; justify-content: space-between; height: 40px; }
-.container { width: 200px; height: 100px; border-color: hsl(152, 100%, 50%); }
+.option { display:flex; flex-wrap: wrap; justify-content: space-between; }
+.container { width: 200px; border-color: hsl(152, 100%, 50%); }
 .colorBox { padding: 5px; }
 .color { width: 100%; height: 100px; border-radius: 15px 15px 15px 15px; border: 2px solid #000000;}
 .colorValues { padding: 5px;}
