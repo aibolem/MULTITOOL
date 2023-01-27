@@ -31,16 +31,6 @@ const Trim = (string) => {
     return newString
 };
 
-const Hyphen = (string) => {
-    var newString = string.replace(/\s+/g,'-').trim();
-    return newString
-};
-
-const Underscore = (string) => {
-    var newString = string.replace(/\s+/g,'_').trim();
-    return newString
-};
-
 var textarea = document.getElementById("text");
 
 document.getElementById("lower").addEventListener("click", function(){
@@ -72,12 +62,14 @@ document.getElementById("trim").addEventListener("click", function(){
     console.log(textarea.value)
 });
 
-document.getElementById("hyphen").addEventListener("click", function(){
-    document.getElementById('hyphen').id = 'whitespace';
-    textarea.value = Hyphen(textarea.value);
+document.getElementById("bold").addEventListener("click", function(){
+    textarea = textarea.style.fontWeight = 'bold';
 });
 
-document.getElementById("underscore").addEventListener("click", function(){
-    document.getElementById('underscore').id = 'whitespace';
-    textarea.value = Underscore(textarea.value);
+document.getElementById("italic").addEventListener("click", function(){
+    textarea = textarea.style.fontStyle = 'italic';
+});
+
+document.getElementById("normal").addEventListener("click", function(){
+    textarea = textarea.style.fontStyle = 'normal';
 });
