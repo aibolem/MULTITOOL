@@ -63,13 +63,20 @@ document.getElementById("trim").addEventListener("click", function(){
 });
 
 document.getElementById("bold").addEventListener("click", function(){
-    textarea = textarea.style.fontWeight = 'bold';
+    textarea.style.fontWeight = "bold"
 });
 
 document.getElementById("italic").addEventListener("click", function(){
-    textarea = textarea.style.fontStyle = 'italic';
+    textarea.style.fontStyle = 'italic';
+});
+
+document.getElementById("underline").addEventListener("click", function(){
+    textarea.style.textDecoration = 'underline';
 });
 
 document.getElementById("normal").addEventListener("click", function(){
-    textarea = textarea.style.fontStyle = 'normal';
+    textarea.style.fontStyle = 'normal';
+    textarea.style.fontWeight = 'normal';
+    textarea.style.textDecoration = 'none';
+
 });
