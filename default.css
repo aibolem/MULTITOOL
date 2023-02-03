@@ -1,7 +1,21 @@
+/*
+* Styles for HTML elements
+*/
+h1 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 56px;font-weight: 400;line-height: 1.35;letter-spacing: -0.02em;margin-top: 24px;margin-bottom: 24px; }
+h2 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 45px;font-weight: 400;line-height: 48px;margin-top: 24px;margin-bottom: 24px; }
+h3 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 34px;font-weight: 400;line-height: 40px;margin-top: 24px;margin-bottom: 24px; }
+h4 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 24px;font-weight: 400;line-height: 32px;margin-top: 24px;margin-bottom: 16px; }
+h5 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 20px;font-weight: 500;line-height: 1;letter-spacing: 0.02em;margin-top: 24px;margin-bottom: 16px; }
+h6 { font-family: "Roboto", "Helvetica", "Arial", sans-serif;font-size: 16px;font-weight: 400;line-height: 24px;letter-spacing: 0.04em;margin-top: 24px;margin-bottom: 16px; }
+p { font-size: 14px;font-weight: 400;line-height: 24px;letter-spacing: 0;margin-bottom: 16px; }
+a { font-weight: 500; background-color:transparent;-webkit-text-decoration-skip:objects; }
+a:any-link, a:link {text-decoration: none; color: black;}
+
+section { padding: 5px; }
+textarea{ background-color: hwb(45 24% 75% / 0.179); width: 100%; font-size: 1em; resize: none; outline: none; resize: vertical; }
+
 body{margin: 0; padding: 0; background-repeat: no-repeat; background-position: center; background-size: cover;}
 section {padding: 5px;}
-a:any-link, a:link {text-decoration: none; color: black;}
-textarea{background-color: hwb(45 24% 75% / 0.179); width: 100%; font-size: 1em; resize: none; outline: none;}
 
 .header {overflow: hidden; background-color: #f1f1f1; padding: 20px 10px;}
 .header a {float: left;color: black;text-align: center;padding: 12px;text-decoration: none;font-size: 18px; line-height: 25px;border-radius: 4px;}
