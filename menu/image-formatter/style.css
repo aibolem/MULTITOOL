@@ -1,4 +1,4 @@
-.card { padding: 50px; margin: 20px auto; width: 412px; height: 512px; border-radius: 10px; box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;   display: flex;  align-items: center; justify-content: center; flex-direction: column;}
+.card { padding: 50px; margin: 20px auto; width: 412px; height: 512px; border-radius: 10px; box-shadow: 0 3px 10px 0 rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); cursor: pointer; transition: 0.4s;   display: flex;  align-items: center; justify-content: center; flex-direction: column;}
 .image-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap; }
 .option { display:flex; flex-wrap: wrap; justify-content: space-between; margin-top: 10px;}
 .file { display: none; } 
