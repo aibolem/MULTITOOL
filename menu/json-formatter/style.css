@@ -1,3 +1,3 @@
 .text-formatter { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap;}
-.option {display:flex; flex-wrap: wrap; justify-content: space-between; height: 40px;}
+.option {display:flex; flex-wrap: wrap; justify-content: space-between;}
 .btn {padding: 0.5em 1.1em;}
