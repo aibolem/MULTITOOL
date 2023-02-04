@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../default.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Formatter</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPVZ3Y14KT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RPVZ3Y14KT');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="./../../index.html" class="logo">Multi Tool</a>
+        <div class="header-right">
+          <a href="https://github.com/Svastikkka/MULTITOOL">About</a>
+          <a href="https://www.svastikkka.com/">Blogs</a>
+        </div>
+    </header>
+    <section>
+        <div class="epoch-formatter">
+            <div class="option">
+                <div class="container">
+                    <form action="" id="mainForm">
+                        <label for="numberInput">Unix timestamp</label>
+                        <input type="number" id="numberInput" value="1590748239"/>
+                        <input type="submit" id="convertButton" value="Convert"/>
+                    </form>
+                    <br/>
+                    <strong>ISO 8601 date (with and without UTC time)</strong>
+                    <div id="outputISO"></div>
+                    <strong>Converted to your local time</strong>
+                    <div id="outputLocal"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>
