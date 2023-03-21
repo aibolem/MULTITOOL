@@ -31,6 +31,16 @@ const Trim = (string) => {
     return newString
 };
 
+const Hyphen = (string) => {
+    var newString = string.replace(/_+/g,'-').trim();
+    return newString
+};
+
+const Underscore = (string) => {
+    var newString = string.replace(/-+/g,'_').trim();
+    return newString
+};
+
 var textarea = document.getElementById("text");
 
 document.getElementById("lower").addEventListener("click", function(){
@@ -79,4 +89,14 @@ document.getElementById("normal").addEventListener("click", function(){
     textarea.style.fontWeight = 'normal';
     textarea.style.textDecoration = 'none';
 
+});
+
+document.getElementById("underscore_to_hyphen").addEventListener("click", function(){
+    textarea.value = Hyphen(textarea.value);
+    console.log(textarea.value)
+});
+
+document.getElementById("hyphen_to_underscore").addEventListener("click", function(){
+    textarea.value = Underscore(textarea.value);
+    console.log(textarea.value)
 });
