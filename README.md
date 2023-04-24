@@ -7,3 +7,4 @@
 5. Trim String
 6. Color Formatter
 7. Base 64 Image encoder
+8. Cron
