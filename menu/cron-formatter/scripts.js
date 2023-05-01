@@ -10,35 +10,35 @@ function getCronDescription(cronExpression) {
 
   // Parse the minute field
   if (minute === '*') {
-    description += 'every minute';
+    description += 'Every minute';
   } else {
     description += `At minute ${minute}`;
   }
 
   // Parse the hour field
   if (hour === '*') {
-    description += ', every hour';
+    description += ', Every hour';
   } else {
     description += `, at ${hour === '0' ? 'midnight' : hour}`;
   }
 
   // Parse the day of month field
   if (dayOfMonth === '*') {
-    description += ', every day';
+    description += ', Every day';
   } else {
     description += `, on the ${getOrdinalNumber(dayOfMonth)} day of the month`;
   }
 
   // Parse the month field
   if (month === '*') {
-    description += ', every month';
+    description += ', Every month';
   } else {
     description += `, in ${getMonthName(month)}`;
   }
 
   // Parse the day of week field
   if (dayOfWeek === '*') {
-    description += ', every day of the week';
+    description += ', Every day of the week';
   } else {
     description += `, on ${getDayOfWeekName(dayOfWeek)}`;
   }
@@ -55,12 +55,22 @@ function getOrdinalNumber(number) {
 
 function getMonthName(month) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  return months[Number(month) - 1];
+  const range = month.split('-');
+  if (range.length === 2) {
+    return `${months[range[0] - 1]} to ${months[range[1] - 1]}`;
+  } else {
+    return months[Number(dayOfWeek) - 1];
+  }
 }
 
 function getDayOfWeekName(dayOfWeek) {
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  return daysOfWeek[Number(dayOfWeek) - 1];
+  const range = dayOfWeek.split('-');
+  if (range.length === 2) {
+    return `${daysOfWeek[range[0] - 1]} to ${daysOfWeek[range[1] - 1]}`;
+  } else {
+    return daysOfWeek[Number(dayOfWeek) - 1];
+  }
 }
 
 
