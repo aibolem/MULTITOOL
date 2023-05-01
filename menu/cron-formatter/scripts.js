@@ -12,7 +12,7 @@ function getCronDescription(cronExpression) {
   if (minute === '*') {
     description += 'every minute';
   } else {
-    description += `at minute ${minute}`;
+    description += `At minute ${minute}`;
   }
 
   // Parse the hour field
@@ -59,7 +59,7 @@ function getMonthName(month) {
 }
 
 function getDayOfWeekName(dayOfWeek) {
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   return daysOfWeek[Number(dayOfWeek) - 1];
 }
 
@@ -94,6 +94,6 @@ submitButton.addEventListener('click', () => {
   // dayOfMonthInput.value = parsedCron.dayOfMonth;
   // monthInput.value = parsedCron.month;
   // dayOfWeekInput.value = parsedCron.dayOfWeek;
-  descriptionOfCron.value = description;
+  descriptionOfCron.textContent = description;
 
 });
