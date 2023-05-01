@@ -59,7 +59,7 @@ function getMonthName(month) {
   if (range.length === 2) {
     return `${months[range[0] - 1]} to ${months[range[1] - 1]}`;
   } else {
-    return months[Number(dayOfWeek) - 1];
+    return months[Number(month) - 1];
   }
 }
 
