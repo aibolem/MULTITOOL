@@ -66,7 +66,7 @@ function parseDayOfWeek(dayOfWeek) {
   return dayOfWeekDescList.join(', ');
 }
 
-//  need to figureout how to concat correct suffix
+//  need to figureout how to concat correct suffix right we ignore suffix
 function getOrdinalNumber(input, includeSuffix = true) {
   const suffixes = ['th', 'st', 'nd', 'rd'];
   const numbers = input.split(' ');
