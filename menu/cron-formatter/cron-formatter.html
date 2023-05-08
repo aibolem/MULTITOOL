@@ -31,12 +31,11 @@
                 <div class="container">
                     <form>
                         <div>
-                            <center><i class="description"><span id="description"></span></i></center>
+                            <i class="description"><span id="description"></span></i>
                         </div>
                         <!-- <label for="description">Description</label> -->
                         <!-- <input type="text" class="description" id="description" name="description" maxlength="50"> -->
                         <!-- <label for="cron-expression">Cron Expression:</label> -->
-                        <input type="text" class="cron-expression" id="cron-expression" name="cron-expression">
                 
                         <!-- <label for="minute">Minute:</label> -->
                         <!-- <input type="text" id="minute" name="minute"> -->
@@ -52,7 +51,10 @@
                 
                         <!-- <label for="day-of-week">Day of Week:</label> -->
                         <!-- <input type="text" id="day-of-week" name="day-of-week"> -->
-                        <button type="button" id="submit">Submit</button>
+                        <div>
+                            <input type="text" class="cron-expression" id="cron-expression" name="cron-expression">
+                            <button type="button" class="submit" id="submit">Submit</button>
+                        </div>
                       </form>
                 </div>
             </div>

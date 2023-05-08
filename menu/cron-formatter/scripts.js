@@ -10,14 +10,14 @@ function getCronDescription(cronExpression) {
 
   // Parse the minute field
   if (minute === '*') {
-    description += 'Every minute';
+    description += 'every minute';
   } else {
-    description += `At minute ${minute}`;
+    description += `at minute ${minute}`;
   }
 
   // Parse the hour field
   if (hour === '*') {
-    description += ', Every hour';
+    description += ', every hour';
   } else {
     description += `, at ${hour === '0' ? 'midnight' : hour}`;
   }
@@ -25,32 +25,60 @@ function getCronDescription(cronExpression) {
   // Parse the day of month field
   if (dayOfMonth === '*') {
     description += ', Every day';
+  } else if (dayOfMonth.includes('-')) {
+    description += `, from the ${getOrdinalNumber(dayOfMonth.split('-')[0], false)} to the ${getOrdinalNumber(dayOfMonth.split('-')[1], false)} day of the month`;
   } else {
-    description += `, on the ${getOrdinalNumber(dayOfMonth)} day of the month`;
+    description += `, on the ${getOrdinalNumber(dayOfMonth)}`;
   }
 
   // Parse the month field
   if (month === '*') {
-    description += ', Every month';
+    description += ', every month';
   } else {
     description += `, in ${getMonthName(month)}`;
   }
 
   // Parse the day of week field
   if (dayOfWeek === '*') {
-    description += ', Every day of the week';
+    description += ', every day of the week';
   } else {
-    description += `, on ${getDayOfWeekName(dayOfWeek)}`;
+    description += `, on ${parseDayOfWeek(dayOfWeek)}`;
   }
 
   return description;
 }
 
-function getOrdinalNumber(number) {
+function parseDayOfWeek(dayOfWeek) {
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayOfWeekList = dayOfWeek.split(',');
+  let dayOfWeekDescList = [];
+  for (let i = 0; i < dayOfWeekList.length; i++) {
+    let desc = '';
+    const value = dayOfWeekList[i];
+    if (value.includes('-')) {
+      const [start, end] = value.split('-');
+      desc = `${getDayOfWeekName(start)}-${getDayOfWeekName(end)}`;
+    } else {
+      desc = `${getDayOfWeekName(value)}`;
+    }
+    dayOfWeekDescList.push(desc);
+  }
+  return dayOfWeekDescList.join(', ');
+}
+
+//  need to figureout how to concat correct suffix
+function getOrdinalNumber(input, includeSuffix = true) {
   const suffixes = ['th', 'st', 'nd', 'rd'];
-  const lastTwoDigits = Number(number.toString().slice(-2));
-  const suffix = suffixes[(lastTwoDigits > 10 && lastTwoDigits < 14) ? 0 : (lastTwoDigits % 10)];
-  return number + suffix;
+  const numbers = input.split(' ');
+
+  const result = [];
+  for (const number of numbers) {
+    const lastTwoDigits = Number(number.toString().slice(-2));
+    const suffix = includeSuffix ? suffixes[(lastTwoDigits > 10 && lastTwoDigits < 14) ? 0 : (lastTwoDigits % 10)] : '';
+    result.push(number + suffix);
+  }
+
+  return result.join(' ');
 }
 
 function getMonthName(month) {
@@ -69,7 +97,7 @@ function getDayOfWeekName(dayOfWeek) {
   if (range.length === 2) {
     return `${daysOfWeek[range[0] - 1]} to ${daysOfWeek[range[1] - 1]}`;
   } else {
-    return daysOfWeek[Number(dayOfWeek) - 1];
+    return daysOfWeek[range[0] - 1];
   }
 }
 
