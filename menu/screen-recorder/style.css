@@ -1,0 +1,3 @@
+video { height: 500px; }
+.screen-recorder { width: auto; justify-content: space-around; display: flex; z-index: 0; flex-wrap: wrap;}
+.option {display:flex; flex-wrap: wrap; justify-content: space-between; height: 40px;}
