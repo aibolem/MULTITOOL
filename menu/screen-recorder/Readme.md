@@ -4,5 +4,3 @@
 - https://codepen.io/remusnegrota/pen/bGNpERz
 - Start learning [WebRTC](https://webrtc.org/)
 - https://www.encora.com/insights/capturing-audio-video-with-webrtc
-
-*Note*: I have not tested this code yet. I will test it later.
