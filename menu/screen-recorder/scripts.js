@@ -1,39 +1,44 @@
 "use strict";
-let btn = document.querySelector(".button")
+
+let btn = document.querySelector(".start-button");
+let stopBtn = document.querySelector(".stop-button");
+let mediaRecorder;
 
 btn.addEventListener("click", async function () {
-  let stream = await navigator.mediaDevices.getDisplayMedia({
-    video: true
-  })
+  try {
+    // Get screen and audio stream using getDisplayMedia
+    let stream = await navigator.mediaDevices.getDisplayMedia({
+      video: true,
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        sampleRate: 44100,
+      },
+    });
 
-  //needed for better browser support
-  const mime = MediaRecorder.isTypeSupported("video/webm; codecs=vp9") 
-             ? "video/webm; codecs=vp9" 
-             : "video/webm"
-    let mediaRecorder = new MediaRecorder(stream, {
-        mimeType: mime
-    })
+    mediaRecorder = new RecordRTC(stream, {
+      type: "video",
+      mimeType: "video/webm",
+      bitsPerSecond: 128000,
+    });
 
-    let chunks = []
-    mediaRecorder.addEventListener('dataavailable', function(e) {
-        chunks.push(e.data)
-    })
+    mediaRecorder.startRecording();
+  } catch (err) {
+    console.error("Error accessing screen/audio:", err);
+  }
+});
 
-    mediaRecorder.addEventListener('stop', function(){
-      let blob = new Blob(chunks, {
-          type: chunks[0].type
-      })
-      let url = URL.createObjectURL(blob)
+stopBtn.addEventListener("click", function () {
+  mediaRecorder.stopRecording(function () {
+    let blob = mediaRecorder.getBlob();
+    let url = URL.createObjectURL(blob);
 
-      let video = document.querySelector("video")
-      video.src = url
+    let video = document.querySelector("video");
+    video.src = url;
 
-      let a = document.createElement('a')
-      a.href = url
-      a.download = 'video.webm'
-      a.click()
-  })
-
-    //we have to start the recorder manually
-    mediaRecorder.start()
-})
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "video.webm";
+    a.click();
+  });
+});
