@@ -9,7 +9,7 @@
 7. Base 64 Image encoder
 8. Cron
 9. Paragraph to JSON
-10. Screen Recorder (Note: Currently we don't allow screen recording with audio right now. We will add this feature in future)
+10. Screen Recorder (Note: Currently we allow screen recording with system audio only and only on chrome we tested and currently a supported browser.)
 # Contribution
 Whether you are an experienced developer or just starting your journey, there are plenty of opportunities to contribute to the MultiTool project. Here are some areas where you can make a difference:
 
